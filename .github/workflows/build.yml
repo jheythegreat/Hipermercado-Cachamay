@@ -20,7 +20,7 @@ jobs:
         uses: msys2/setup-msys2@v2
         with:
           msystem: ucrt64
-          install: mingw-w64-x86_64-toolchain mingw-w64-x86_64-gtk3 mingw-w64-x86_64-gcc make
+          install: mingw-w64-ucrt-x86_64-toolchain mingw-w64-ucrt-x86_64-gtk3 mingw-w64-ucrt-x86_64-gcc make
 
       - name: Check if g++ is available
         shell: msys2 {0}
