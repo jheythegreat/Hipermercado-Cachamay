@@ -26,6 +26,10 @@ jobs:
         shell: msys2 {0}
         run: pacman -S --noconfirm --overwrite '*' mingw-w64-x86_64-gtk3 mingw-w64-x86_64-pango mingw-w64-x86_64-cairo mingw-w64-x86_64-atk
 
+      - name: Verify GTK+3 installation
+        shell: msys2 {0}
+        run: pacman -Q mingw-w64-x86_64-gtk3
+
       - name: Check if g++ is available
         shell: msys2 {0}
         run: g++ --version
