@@ -23,6 +23,7 @@ jobs:
           install: >-
             mingw-w64-x86_64-toolchain
             mingw-w64-x86_64-gtk3
+            make  # <-- Se agregó make para que esté disponible
 
       - name: Build project with Make
         shell: msys2 {0}
