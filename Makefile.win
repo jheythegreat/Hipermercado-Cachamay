@@ -19,10 +19,10 @@ RM       = rm.exe -f
 all: all-before $(BIN) all-after
 
 clean: clean-custom
-    ${RM} $(OBJ) $(BIN)
+	${RM} $(OBJ) $(BIN)
 
 $(BIN): $(OBJ)
-    $(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
 main.o: main.cpp
-    $(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
