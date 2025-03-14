@@ -6,9 +6,9 @@ CC       = gcc.exe
 WINDRES  = windres.exe
 OBJ      = main.o
 LINKOBJ  = main.o
-LIBS     = -L"C:/msys64/ucrt64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -static-libgcc -lgtk-3 -lgdk-3 -lgobject-2.0 -lglib-2.0 -latk-1.0
-INCS     = -I"C:/msys64/ucrt64/include/gtk-3.0" -I"C:/msys64/ucrt64/include/glib-2.0" -I"C:/msys64/ucrt64/lib/glib-2.0/include" -I"C:/msys64/ucrt64/include/pango-1.0" -I"C:/msys64/ucrt64/include/harfbuzz" -I"C:/msys64/ucrt64/include/cairo" -I"C:/msys64/ucrt64/include/gdk-pixbuf-2.0" -I"C:/msys64/ucrt64/include/atk-1.0"
-CXXINCS  = -I"C:/msys64/ucrt64/include/gtk-3.0" -I"C:/msys64/ucrt64/include/glib-2.0" -I"C:/msys64/ucrt64/lib/glib-2.0/include" -I"C:/msys64/ucrt64/include/pango-1.0" -I"C:/msys64/ucrt64/include/harfbuzz" -I"C:/msys64/ucrt64/include/cairo" -I"C:/msys64/ucrt64/include/gdk-pixbuf-2.0" -I"C:/msys64/ucrt64/include/atk-1.0"
+LIBS     = -L"C:/msys64/mingw64/lib" -static-libgcc -lgtk-3 -lgdk-3 -lgobject-2.0 -lglib-2.0 -latk-1.0
+INCS     = -I"C:/msys64/mingw64/include/gtk-3.0" -I"C:/msys64/mingw64/include/glib-2.0" -I"C:/msys64/mingw64/lib/glib-2.0/include" -I"C:/msys64/mingw64/include/pango-1.0" -I"C:/msys64/mingw64/include/harfbuzz" -I"C:/msys64/mingw64/include/cairo" -I"C:/msys64/mingw64/include/gdk-pixbuf-2.0" -I"C:/msys64/mingw64/include/atk-1.0"
+CXXINCS  = -I"C:/msys64/mingw64/include/gtk-3.0" -I"C:/msys64/mingw64/include/glib-2.0" -I"C:/msys64/mingw64/lib/glib-2.0/include" -I"C:/msys64/mingw64/include/pango-1.0" -I"C:/msys64/mingw64/include/harfbuzz" -I"C:/msys64/mingw64/include/cairo" -I"C:/msys64/mingw64/include/gdk-pixbuf-2.0" -I"C:/msys64/mingw64/include/atk-1.0"
 BIN      = Project2.exe
 CXXFLAGS = $(CXXINCS)
 CFLAGS   = $(INCS)
@@ -19,10 +19,10 @@ RM       = rm.exe -f
 all: all-before $(BIN) all-after
 
 clean: clean-custom
-	${RM} $(OBJ) $(BIN)
+    ${RM} $(OBJ) $(BIN)
 
 $(BIN): $(OBJ)
-	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+    $(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
 main.o: main.cpp
-	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+    $(CPP) -c main.cpp -o main.o $(CXXFLAGS)
