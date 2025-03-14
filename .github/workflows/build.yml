@@ -20,10 +20,7 @@ jobs:
         uses: msys2/setup-msys2@v2
         with:
           msystem: ucrt64
-          install: >-
-            mingw-w64-x86_64-toolchain
-            mingw-w64-x86_64-gtk3
-            make  # <-- Se agregó make para que esté disponible
+          install: mingw-w64-x86_64-toolchain mingw-w64-x86_64-gtk3 make  # No incluir comentarios aquí
 
       - name: Build project with Make
         shell: msys2 {0}
