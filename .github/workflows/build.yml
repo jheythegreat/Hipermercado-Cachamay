@@ -24,7 +24,7 @@ jobs:
 
       - name: Install GTK dependencies
         shell: msys2 {0}
-        run: pacman -S mingw-w64-x86_64-gtk3 mingw-w64-x86_64-pango mingw-w64-x86_64-cairo mingw-w64-x86_64-atk
+        run: pacman -S --noconfirm --overwrite '*' mingw-w64-x86_64-gtk3 mingw-w64-x86_64-pango mingw-w64-x86_64-cairo mingw-w64-x86_64-atk
 
       - name: Check if g++ is available
         shell: msys2 {0}
