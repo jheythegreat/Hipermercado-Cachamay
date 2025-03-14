@@ -23,7 +23,7 @@ typedef struct {
     char direccion[200];
 } Cliente;
 
-// Estructura para representar un ítem de factura
+// Estructura para representar un Ã­tem de factura
 typedef struct {
     int codigo_producto;
     int cantidad;
@@ -34,7 +34,7 @@ typedef struct {
 typedef struct {
     char fecha[20];
     char cedula_cliente[20];
-    GList *items; // Lista de ítems de la factura
+    GList *items; // Lista de Ã­tems de la factura
     float subtotal;
     float iva;
     float total;
@@ -105,7 +105,7 @@ void on_ultimas_facturas_clicked(GtkButton *button, gpointer user_data);
 void on_cantidad_trabajadores_clicked(GtkButton *button, gpointer user_data);
 void on_total_vendido_clicked(GtkButton *button, gpointer user_data);
 
-// Función principal
+// FunciÃ³n principal
 int main(int argc, char *argv[]) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -125,37 +125,37 @@ int main(int argc, char *argv[]) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Botón para el módulo de productos
+    // BotÃ³n para el mÃ³dulo de productos
     button_productos = gtk_button_new_with_label("Productos");
     g_signal_connect(button_productos, "clicked", G_CALLBACK(on_productos_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_productos, 0, 0, 1, 1);
 
-    // Botón para el módulo de clientes
+    // BotÃ³n para el mÃ³dulo de clientes
     button_clientes = gtk_button_new_with_label("Clientes");
     g_signal_connect(button_clientes, "clicked", G_CALLBACK(on_clientes_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_clientes, 0, 1, 1, 1);
 
-    // Botón para el módulo de facturas
+    // BotÃ³n para el mÃ³dulo de facturas
     button_facturas = gtk_button_new_with_label("Facturas");
     g_signal_connect(button_facturas, "clicked", G_CALLBACK(on_facturas_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_facturas, 0, 2, 1, 1);
     
-    // Botón para el módulo de ventas
+    // BotÃ³n para el mÃ³dulo de ventas
     button_ventas = gtk_button_new_with_label("Ventas");
     g_signal_connect(button_ventas, "clicked", G_CALLBACK(on_ventas_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_ventas, 0, 3, 1, 1);
     
-    // Botón para el módulo de control de cajas
+    // BotÃ³n para el mÃ³dulo de control de cajas
     button_control_cajas = gtk_button_new_with_label("Control de Cajas");
     g_signal_connect(button_control_cajas, "clicked", G_CALLBACK(on_control_cajas_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_control_cajas, 1, 0, 1, 1);    
 
-    // Botón para el módulo de trabajadores
+    // BotÃ³n para el mÃ³dulo de trabajadores
     button_trabajadores = gtk_button_new_with_label("Trabajadores");
     g_signal_connect(button_trabajadores, "clicked", G_CALLBACK(on_trabajadores_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_trabajadores, 1, 1, 1, 1);
 
-    // Botón para el módulo de reportes
+    // BotÃ³n para el mÃ³dulo de reportes
     button_reportes = gtk_button_new_with_label("Reportes");
     g_signal_connect(button_reportes, "clicked", G_CALLBACK(on_reportes_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_reportes, 1, 2, 1, 1);
@@ -169,7 +169,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-// Función para manejar el clic en el botón "Total Ventas"
+// FunciÃ³n para manejar el clic en el botÃ³n "Total Ventas"
 void on_total_vendido_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -189,7 +189,7 @@ void on_total_vendido_clicked(GtkButton *button, gpointer user_data) {
     GList *l;
     for (l = facturas; l != NULL; l = l->next) {
         Factura *factura = (Factura *)l->data;
-        total_diario += factura->total; // Aquí debes implementar la lógica para calcular los totales diarios, semanales y mensuales.
+        total_diario += factura->total; // AquÃ­ debes implementar la lÃ³gica para calcular los totales diarios, semanales y mensuales.
     }
 
     // Mostrar los resultados en una etiqueta
@@ -208,7 +208,7 @@ void on_total_vendido_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Cantidad de Trabajadores"
+// FunciÃ³n para manejar el clic en el botÃ³n "Cantidad de Trabajadores"
 void on_cantidad_trabajadores_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -238,7 +238,7 @@ void on_cantidad_trabajadores_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Ultimas Facturas"
+// FunciÃ³n para manejar el clic en el botÃ³n "Ultimas Facturas"
 void on_ultimas_facturas_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -255,7 +255,7 @@ void on_ultimas_facturas_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Crear un área de texto con scroll
+    // Crear un Ã¡rea de texto con scroll
     scroll = gtk_scrolled_window_new(NULL, NULL);
     gtk_widget_set_hexpand(scroll, TRUE);
     gtk_widget_set_vexpand(scroll, TRUE);
@@ -267,7 +267,7 @@ void on_ultimas_facturas_clicked(GtkButton *button, gpointer user_data) {
 
     buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(view));
 
-    // Mostrar las últimas 10 facturas
+    // Mostrar las Ãºltimas 10 facturas
     GString *text = g_string_new(NULL);
     GList *l;
     int count = 0;
@@ -294,7 +294,7 @@ void on_ultimas_facturas_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Productos más Vendidos"
+// FunciÃ³n para manejar el clic en el botÃ³n "Productos mÃ¡s Vendidos"
 void on_productos_mas_vendidos_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -312,7 +312,7 @@ void on_productos_mas_vendidos_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Crear un área de texto con scroll
+    // Crear un Ã¡rea de texto con scroll
     scroll = gtk_scrolled_window_new(NULL, NULL);
     gtk_widget_set_hexpand(scroll, TRUE);
     gtk_widget_set_vexpand(scroll, TRUE);
@@ -324,7 +324,7 @@ void on_productos_mas_vendidos_clicked(GtkButton *button, gpointer user_data) {
 
     buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(view));
 
-    // Encontrar el producto más vendido
+    // Encontrar el producto mÃ¡s vendido
     Producto *producto_mas_vendido = NULL;
     int max_cantidad = 0;
     GList *l;
@@ -336,7 +336,7 @@ void on_productos_mas_vendidos_clicked(GtkButton *button, gpointer user_data) {
         }
     }
 
-    // Mostrar el resultado en el área de texto
+    // Mostrar el resultado en el Ã¡rea de texto
     if (producto_mas_vendido != NULL) {
         gchar *text = g_strdup_printf("Producto mas vendido:\n"
                                       "Nombre del Producto: %s\n"
@@ -352,7 +352,7 @@ void on_productos_mas_vendidos_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Clientes con Compras Realizadas"
+// FunciÃ³n para manejar el clic en el botÃ³n "Clientes con Compras Realizadas"
 void on_clientes_compras_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -370,7 +370,7 @@ void on_clientes_compras_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Crear un área de texto con scroll
+    // Crear un Ã¡rea de texto con scroll
     scroll = gtk_scrolled_window_new(NULL, NULL);
     gtk_widget_set_hexpand(scroll, TRUE);
     gtk_widget_set_vexpand(scroll, TRUE);
@@ -398,7 +398,7 @@ void on_clientes_compras_clicked(GtkButton *button, gpointer user_data) {
         }
     }
 
-    // Mostrar el resultado en el área de texto
+    // Mostrar el resultado en el Ã¡rea de texto
     gchar *text = g_strdup_printf("Clientes con Compras Realizadas: %d\n", cantidad_clientes);
     gtk_text_buffer_set_text(buffer, text, -1);
     g_free(text);
@@ -407,13 +407,13 @@ void on_clientes_compras_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Reportes"
+// FunciÃ³n para manejar el clic en el botÃ³n "Reportes"
 void on_reportes_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
     GtkWidget *button_clientes_compras, *button_productos_mas_vendidos, *button_ultimas_facturas, *button_cantidad_trabajadores, *button_total_vendido;
 
-    // Crear una nueva ventana para el módulo de reportes
+    // Crear una nueva ventana para el mÃ³dulo de reportes
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(window), "Reportes");
     gtk_window_set_default_size(GTK_WINDOW(window), 300, 200);
@@ -422,27 +422,27 @@ void on_reportes_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Botón "Clientes con Compras Realizadas"
+    // BotÃ³n "Clientes con Compras Realizadas"
     button_clientes_compras = gtk_button_new_with_label("Compras Realizadas");
     g_signal_connect(button_clientes_compras, "clicked", G_CALLBACK(on_clientes_compras_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_clientes_compras, 0, 0, 1, 1);
 
-    // Botón "Productos más vendidos"
+    // BotÃ³n "Productos mÃ¡s vendidos"
     button_productos_mas_vendidos = gtk_button_new_with_label("Productos mas vendidos");
     g_signal_connect(button_productos_mas_vendidos, "clicked", G_CALLBACK(on_productos_mas_vendidos_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_productos_mas_vendidos, 0, 1, 1, 1);
 
-    // Botón "Últimas Facturas"
+    // BotÃ³n "Ãšltimas Facturas"
     button_ultimas_facturas = gtk_button_new_with_label("Ultimas Facturas");
     g_signal_connect(button_ultimas_facturas, "clicked", G_CALLBACK(on_ultimas_facturas_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_ultimas_facturas, 0, 2, 1, 1);
 
-    // Botón "Cantidad de Trabajadores"
+    // BotÃ³n "Cantidad de Trabajadores"
     button_cantidad_trabajadores = gtk_button_new_with_label("Cantidad de Trabajadores");
     g_signal_connect(button_cantidad_trabajadores, "clicked", G_CALLBACK(on_cantidad_trabajadores_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_cantidad_trabajadores, 0, 3, 1, 1);
 
-    // Botón "Total Vendido"
+    // BotÃ³n "Total Vendido"
     button_total_vendido = gtk_button_new_with_label("Total Ventas");
     g_signal_connect(button_total_vendido, "clicked", G_CALLBACK(on_total_vendido_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_total_vendido, 0, 4, 1, 1);
@@ -451,13 +451,13 @@ void on_reportes_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón botón "Trabajadores"
+// FunciÃ³n para manejar el clic en el botÃ³n botÃ³n "Trabajadores"
 void on_trabajadores_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
     GtkWidget *button_crear, *button_modificar, *button_eliminar, *button_mostrar;
 
-    // Crear una nueva ventana para el módulo de trabajadores
+    // Crear una nueva ventana para el mÃ³dulo de trabajadores
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(window), "Control de Trabajadores");
     gtk_window_set_default_size(GTK_WINDOW(window), 300, 200);
@@ -466,22 +466,22 @@ void on_trabajadores_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Botón "Crear Trabajador"
+    // BotÃ³n "Crear Trabajador"
     button_crear = gtk_button_new_with_label("Crear Trabajador");
     g_signal_connect(button_crear, "clicked", G_CALLBACK(on_crear_trabajador_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_crear, 0, 0, 1, 1);
 
-    // Botón "Modificar Trabajador"
+    // BotÃ³n "Modificar Trabajador"
     button_modificar = gtk_button_new_with_label("Modificar Trabajador");
     g_signal_connect(button_modificar, "clicked", G_CALLBACK(on_modificar_trabajador_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_modificar, 0, 1, 1, 1);
 
-    // Botón "Eliminar Trabajador"
+    // BotÃ³n "Eliminar Trabajador"
     button_eliminar = gtk_button_new_with_label("Eliminar Trabajador");
     g_signal_connect(button_eliminar, "clicked", G_CALLBACK(on_eliminar_trabajador_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_eliminar, 0, 2, 1, 1);
 
-    // Botón "Mostrar Trabajadores"
+    // BotÃ³n "Mostrar Trabajadores"
     button_mostrar = gtk_button_new_with_label("Mostrar Trabajadores");
     g_signal_connect(button_mostrar, "clicked", G_CALLBACK(on_mostrar_trabajadores_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_mostrar, 0, 3, 1, 1);
@@ -490,7 +490,7 @@ void on_trabajadores_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Crear Trabajador"
+// FunciÃ³n para manejar el clic en el botÃ³n "Crear Trabajador"
 void on_crear_trabajador_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -519,35 +519,35 @@ void on_crear_trabajador_clicked(GtkButton *button, gpointer user_data) {
     entry_apellido = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_apellido, 1, 1, 1, 1);
 
-    // Campo de entrada para la cédula del trabajador
+    // Campo de entrada para la cÃ©dula del trabajador
     label_cedula = gtk_label_new("Cedula del Trabajador:");
     gtk_grid_attach(GTK_GRID(grid), label_cedula, 0, 2, 1, 1);
     entry_cedula = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_cedula, 1, 2, 1, 1);
 
-    // Campo de entrada para el número de trabajador
+    // Campo de entrada para el nÃºmero de trabajador
     label_numero = gtk_label_new("Numero de Trabajador:");
     gtk_grid_attach(GTK_GRID(grid), label_numero, 0, 3, 1, 1);
     entry_numero = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_numero, 1, 3, 1, 1);
 
-    // Campo de entrada para el teléfono del trabajador
+    // Campo de entrada para el telÃ©fono del trabajador
     label_telefono = gtk_label_new("Telefono del Trabajador:");
     gtk_grid_attach(GTK_GRID(grid), label_telefono, 0, 4, 1, 1);
     entry_telefono = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_telefono, 1, 4, 1, 1);
 
-    // Campo de entrada para la dirección del trabajador
+    // Campo de entrada para la direcciÃ³n del trabajador
     label_direccion = gtk_label_new("Direccion del Trabajador:");
     gtk_grid_attach(GTK_GRID(grid), label_direccion, 0, 5, 1, 1);
     entry_direccion = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_direccion, 1, 5, 1, 1);
 
-    // Botón para guardar el trabajador
+    // BotÃ³n para guardar el trabajador
     button_guardar = gtk_button_new_with_label("Guardar Trabajador");
     gtk_grid_attach(GTK_GRID(grid), button_guardar, 0, 6, 2, 1);
 
-    // Conectar la señal del botón "Guardar Trabajador"
+    // Conectar la seÃ±al del botÃ³n "Guardar Trabajador"
     g_signal_connect(button_guardar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_nombre = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_nombre"));
         GtkEntry *entry_apellido = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_apellido"));
@@ -563,7 +563,7 @@ void on_crear_trabajador_clicked(GtkButton *button, gpointer user_data) {
         const char *telefono = gtk_entry_get_text(entry_telefono);
         const char *direccion = gtk_entry_get_text(entry_direccion);
 
-        // Validar que los campos no estén vacíos
+        // Validar que los campos no estÃ©n vacÃ­os
         if (strlen(nombre) == 0 || strlen(apellido) == 0 || strlen(cedula) == 0 || strlen(numero) == 0 || strlen(telefono) == 0 || strlen(direccion) == 0) {
             GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "Por favor, complete todos los campos.");
             gtk_dialog_run(GTK_DIALOG(dialog));
@@ -583,12 +583,12 @@ void on_crear_trabajador_clicked(GtkButton *button, gpointer user_data) {
         // Agregar el trabajador a la lista
         trabajadores = g_list_append(trabajadores, trabajador);
 
-        // Mostrar un mensaje de éxito
+        // Mostrar un mensaje de Ã©xito
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Trabajador creado exitosamente.");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
 
-        // Cerrar la ventana después de guardar
+        // Cerrar la ventana despuÃ©s de guardar
         gtk_widget_destroy(GTK_WIDGET(data));
     }), window);
 
@@ -604,7 +604,7 @@ void on_crear_trabajador_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Modificar Trabajador"
+// FunciÃ³n para manejar el clic en el botÃ³n "Modificar Trabajador"
 void on_modificar_trabajador_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -621,17 +621,17 @@ void on_modificar_trabajador_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Campo de entrada para la cédula del trabajador
+    // Campo de entrada para la cÃ©dula del trabajador
     label_cedula = gtk_label_new("Cedula del Trabajador:");
     gtk_grid_attach(GTK_GRID(grid), label_cedula, 0, 0, 1, 1);
     entry_cedula = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_cedula, 1, 0, 1, 1);
 
-    // Botón para buscar el trabajador
+    // BotÃ³n para buscar el trabajador
     button_buscar = gtk_button_new_with_label("Buscar Trabajador");
     gtk_grid_attach(GTK_GRID(grid), button_buscar, 0, 1, 2, 1);
 
-    // Conectar la señal del botón "Buscar Trabajador"
+    // Conectar la seÃ±al del botÃ³n "Buscar Trabajador"
     g_signal_connect(button_buscar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_cedula = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_cedula"));
         const char *cedula = gtk_entry_get_text(entry_cedula);
@@ -681,29 +681,29 @@ void on_modificar_trabajador_clicked(GtkButton *button, gpointer user_data) {
     entry_apellido = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_apellido, 1, 3, 1, 1);
 
-    // Campo de entrada para el número de trabajador
+    // Campo de entrada para el nÃºmero de trabajador
     label_numero = gtk_label_new("Numero de Trabajador:");
     gtk_grid_attach(GTK_GRID(grid), label_numero, 0, 4, 1, 1);
     entry_numero = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_numero, 1, 4, 1, 1);
 
-    // Campo de entrada para el teléfono del trabajador
+    // Campo de entrada para el telÃ©fono del trabajador
     label_telefono = gtk_label_new("Telefono del Trabajador:");
     gtk_grid_attach(GTK_GRID(grid), label_telefono, 0, 5, 1, 1);
     entry_telefono = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_telefono, 1, 5, 1, 1);
 
-    // Campo de entrada para la dirección del trabajador
+    // Campo de entrada para la direcciÃ³n del trabajador
     label_direccion = gtk_label_new("Direccion del Trabajador:");
     gtk_grid_attach(GTK_GRID(grid), label_direccion, 0, 6, 1, 1);
     entry_direccion = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_direccion, 1, 6, 1, 1);
 
-    // Botón para guardar los cambios
+    // BotÃ³n para guardar los cambios
     button_guardar = gtk_button_new_with_label("Guardar Cambios");
     gtk_grid_attach(GTK_GRID(grid), button_guardar, 0, 7, 2, 1);
 
-    // Conectar la señal del botón "Guardar Cambios"
+    // Conectar la seÃ±al del botÃ³n "Guardar Cambios"
     g_signal_connect(button_guardar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_cedula = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_cedula"));
         GtkEntry *entry_nombre = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_nombre"));
@@ -745,12 +745,12 @@ void on_modificar_trabajador_clicked(GtkButton *button, gpointer user_data) {
         strncpy(trabajador_encontrado->telefono, telefono, sizeof(trabajador_encontrado->telefono));
         strncpy(trabajador_encontrado->direccion, direccion, sizeof(trabajador_encontrado->direccion));
 
-        // Mostrar un mensaje de éxito
+        // Mostrar un mensaje de Ã©xito
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Trabajador modificado exitosamente.");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
 
-        // Cerrar la ventana después de guardar
+        // Cerrar la ventana despuÃ©s de guardar
         gtk_widget_destroy(GTK_WIDGET(data));
     }), window);
 
@@ -766,7 +766,7 @@ void on_modificar_trabajador_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Eliminar Trabajador"
+// FunciÃ³n para manejar el clic en el botÃ³n "Eliminar Trabajador"
 void on_eliminar_trabajador_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -783,17 +783,17 @@ void on_eliminar_trabajador_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Campo de entrada para la cédula del trabajador
+    // Campo de entrada para la cÃ©dula del trabajador
     label_cedula = gtk_label_new("Cedula del Trabajador:");
     gtk_grid_attach(GTK_GRID(grid), label_cedula, 0, 0, 1, 1);
     entry_cedula = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_cedula, 1, 0, 1, 1);
 
-    // Botón para eliminar el trabajador
+    // BotÃ³n para eliminar el trabajador
     button_eliminar = gtk_button_new_with_label("Eliminar Trabajador");
     gtk_grid_attach(GTK_GRID(grid), button_eliminar, 0, 1, 2, 1);
 
-    // Conectar la señal del botón "Eliminar Trabajador"
+    // Conectar la seÃ±al del botÃ³n "Eliminar Trabajador"
     g_signal_connect(button_eliminar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_cedula = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_cedula"));
         const char *cedula = gtk_entry_get_text(entry_cedula);
@@ -821,12 +821,12 @@ void on_eliminar_trabajador_clicked(GtkButton *button, gpointer user_data) {
         trabajadores = g_list_remove(trabajadores, trabajador_encontrado);
         g_free(trabajador_encontrado);
 
-        // Mostrar un mensaje de éxito
+        // Mostrar un mensaje de Ã©xito
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Trabajador eliminado exitosamente.");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
 
-        // Cerrar la ventana después de eliminar
+        // Cerrar la ventana despuÃ©s de eliminar
         gtk_widget_destroy(GTK_WIDGET(data));
     }), window);
 
@@ -837,7 +837,7 @@ void on_eliminar_trabajador_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Mostrar Trabajadores"
+// FunciÃ³n para manejar el clic en el botÃ³n "Mostrar Trabajadores"
 void on_mostrar_trabajadores_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -854,7 +854,7 @@ void on_mostrar_trabajadores_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Crear un área de texto con scroll
+    // Crear un Ã¡rea de texto con scroll
     scroll = gtk_scrolled_window_new(NULL, NULL);
     gtk_widget_set_hexpand(scroll, TRUE);
     gtk_widget_set_vexpand(scroll, TRUE);
@@ -878,7 +878,7 @@ void on_mostrar_trabajadores_clicked(GtkButton *button, gpointer user_data) {
         for (l = trabajadores; l != NULL; l = l->next) {
             Trabajador *trabajador = (Trabajador *)l->data;
 
-            // Agregar la información del trabajador al string
+            // Agregar la informaciÃ³n del trabajador al string
             g_string_append_printf(text, 
                 "Nombre: %s\n"
                 "Apellido: %s\n"
@@ -905,13 +905,13 @@ void on_mostrar_trabajadores_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Control de Cajas"
+// FunciÃ³n para manejar el clic en el botÃ³n "Control de Cajas"
 void on_control_cajas_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
     GtkWidget *button_crear, *button_modificar, *button_eliminar, *button_mostrar;
 
-    // Crear una nueva ventana para el módulo de control de cajas
+    // Crear una nueva ventana para el mÃ³dulo de control de cajas
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(window), "Control de Cajas");
     gtk_window_set_default_size(GTK_WINDOW(window), 300, 200);
@@ -920,22 +920,22 @@ void on_control_cajas_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Botón "Crear Caja"
+    // BotÃ³n "Crear Caja"
     button_crear = gtk_button_new_with_label("Crear Caja");
     g_signal_connect(button_crear, "clicked", G_CALLBACK(on_crear_caja_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_crear, 0, 0, 1, 1);
 
-    // Botón "Modificar Caja"
+    // BotÃ³n "Modificar Caja"
     button_modificar = gtk_button_new_with_label("Modificar Caja");
     g_signal_connect(button_modificar, "clicked", G_CALLBACK(on_modificar_caja_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_modificar, 0, 1, 1, 1);
 
-    // Botón "Eliminar Caja"
+    // BotÃ³n "Eliminar Caja"
     button_eliminar = gtk_button_new_with_label("Eliminar Caja");
     g_signal_connect(button_eliminar, "clicked", G_CALLBACK(on_eliminar_caja_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_eliminar, 0, 2, 1, 1);
 
-    // Botón "Mostrar Cajas"
+    // BotÃ³n "Mostrar Cajas"
     button_mostrar = gtk_button_new_with_label("Mostrar Cajas");
     g_signal_connect(button_mostrar, "clicked", G_CALLBACK(on_mostrar_cajas_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_mostrar, 0, 3, 1, 1);
@@ -944,7 +944,7 @@ void on_control_cajas_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Crear Caja"
+// FunciÃ³n para manejar el clic en el botÃ³n "Crear Caja"
 void on_crear_caja_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -961,7 +961,7 @@ void on_crear_caja_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Campo de entrada para el número de caja
+    // Campo de entrada para el nÃºmero de caja
     label_numero = gtk_label_new("Numero de caja:");
     gtk_grid_attach(GTK_GRID(grid), label_numero, 0, 0, 1, 1);
     entry_numero = gtk_entry_new();
@@ -973,11 +973,11 @@ void on_crear_caja_clicked(GtkButton *button, gpointer user_data) {
     entry_responsable = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_responsable, 1, 1, 1, 1);
 
-    // Botón para guardar la caja
+    // BotÃ³n para guardar la caja
     button_guardar = gtk_button_new_with_label("Guardar Caja");
     gtk_grid_attach(GTK_GRID(grid), button_guardar, 0, 2, 2, 1);
 
-    // Conectar la señal del botón "Guardar Caja"
+    // Conectar la seÃ±al del botÃ³n "Guardar Caja"
     g_signal_connect(button_guardar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_numero = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_numero"));
         GtkEntry *entry_responsable = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_responsable"));
@@ -985,7 +985,7 @@ void on_crear_caja_clicked(GtkButton *button, gpointer user_data) {
         const char *numero_str = gtk_entry_get_text(entry_numero);
         const char *responsable = gtk_entry_get_text(entry_responsable);
 
-        // Validar que los campos no estén vacíos
+        // Validar que los campos no estÃ©n vacÃ­os
         if (strlen(numero_str) == 0 || strlen(responsable) == 0) {
             GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "Por favor, complete todos los campos.");
             gtk_dialog_run(GTK_DIALOG(dialog));
@@ -993,7 +993,7 @@ void on_crear_caja_clicked(GtkButton *button, gpointer user_data) {
             return;
         }
 
-        // Convertir el número de caja a un entero
+        // Convertir el nÃºmero de caja a un entero
         int numero_caja = atoi(numero_str);
 
         // Crear una nueva caja
@@ -1008,12 +1008,12 @@ void on_crear_caja_clicked(GtkButton *button, gpointer user_data) {
         // Agregar la caja a la lista
         cajas = g_list_append(cajas, caja);
 
-        // Mostrar un mensaje de éxito
+        // Mostrar un mensaje de Ã©xito
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Caja creada exitosamente.");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
 
-        // Cerrar la ventana después de guardar
+        // Cerrar la ventana despuÃ©s de guardar
         gtk_widget_destroy(GTK_WIDGET(data));
     }), window);
 
@@ -1025,7 +1025,7 @@ void on_crear_caja_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Modiifcar Caja"
+// FunciÃ³n para manejar el clic en el botÃ³n "Modiifcar Caja"
 void on_modificar_caja_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -1042,17 +1042,17 @@ void on_modificar_caja_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Campo de entrada para el número de caja
+    // Campo de entrada para el nÃºmero de caja
     label_numero = gtk_label_new("Numero de caja a modificar:");
     gtk_grid_attach(GTK_GRID(grid), label_numero, 0, 0, 1, 1);
     entry_numero = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_numero, 1, 0, 1, 1);
 
-    // Botón para buscar la caja
+    // BotÃ³n para buscar la caja
     button_buscar = gtk_button_new_with_label("Buscar Caja");
     gtk_grid_attach(GTK_GRID(grid), button_buscar, 0, 1, 2, 1);
 
-    // Conectar la señal del botón "Buscar Caja"
+    // Conectar la seÃ±al del botÃ³n "Buscar Caja"
     g_signal_connect(button_buscar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_numero = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_numero"));
         const char *numero_str = gtk_entry_get_text(entry_numero);
@@ -1109,7 +1109,7 @@ void on_modificar_caja_clicked(GtkButton *button, gpointer user_data) {
     entry_pesos = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_pesos, 1, 4, 1, 1);
 
-    // Campo de entrada para el total facturado en Dólares
+    // Campo de entrada para el total facturado en DÃ³lares
     label_dolares = gtk_label_new("Total Facturado en Dolares:");
     gtk_grid_attach(GTK_GRID(grid), label_dolares, 0, 5, 1, 1);
     entry_dolares = gtk_entry_new();
@@ -1121,11 +1121,11 @@ void on_modificar_caja_clicked(GtkButton *button, gpointer user_data) {
     entry_euros = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_euros, 1, 6, 1, 1);
 
-    // Botón para guardar los cambios
+    // BotÃ³n para guardar los cambios
     button_guardar = gtk_button_new_with_label("Guardar Cambios");
     gtk_grid_attach(GTK_GRID(grid), button_guardar, 0, 7, 2, 1);
 
-    // Conectar la señal del botón "Guardar Cambios"
+    // Conectar la seÃ±al del botÃ³n "Guardar Cambios"
     g_signal_connect(button_guardar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_numero = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_numero"));
         GtkEntry *entry_responsable = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_responsable"));
@@ -1141,7 +1141,7 @@ void on_modificar_caja_clicked(GtkButton *button, gpointer user_data) {
         const char *dolares_str = gtk_entry_get_text(entry_dolares);
         const char *euros_str = gtk_entry_get_text(entry_euros);
 
-        // Convertir los valores a números
+        // Convertir los valores a nÃºmeros
         int numero_caja = atoi(numero_str);
         float total_bs = atof(bs_str);
         float total_pesos = atof(pesos_str);
@@ -1174,12 +1174,12 @@ void on_modificar_caja_clicked(GtkButton *button, gpointer user_data) {
         caja_encontrada->total_dolares = total_dolares;
         caja_encontrada->total_euros = total_euros;
 
-        // Mostrar un mensaje de éxito
+        // Mostrar un mensaje de Ã©xito
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Caja modificada exitosamente.");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
 
-        // Cerrar la ventana después de guardar
+        // Cerrar la ventana despuÃ©s de guardar
         gtk_widget_destroy(GTK_WIDGET(data));
     }), window);
 
@@ -1195,7 +1195,7 @@ void on_modificar_caja_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Eliminar Caja"
+// FunciÃ³n para manejar el clic en el botÃ³n "Eliminar Caja"
 void on_eliminar_caja_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -1212,17 +1212,17 @@ void on_eliminar_caja_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Campo de entrada para el número de caja
+    // Campo de entrada para el nÃºmero de caja
     label_numero = gtk_label_new("Numero de caja a eliminar:");
     gtk_grid_attach(GTK_GRID(grid), label_numero, 0, 0, 1, 1);
     entry_numero = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_numero, 1, 0, 1, 1);
 
-    // Botón para eliminar la caja
+    // BotÃ³n para eliminar la caja
     button_eliminar = gtk_button_new_with_label("Eliminar Caja");
     gtk_grid_attach(GTK_GRID(grid), button_eliminar, 0, 1, 2, 1);
 
-    // Conectar la señal del botón "Eliminar Caja"
+    // Conectar la seÃ±al del botÃ³n "Eliminar Caja"
     g_signal_connect(button_eliminar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_numero = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_numero"));
         const char *numero_str = gtk_entry_get_text(entry_numero);
@@ -1251,12 +1251,12 @@ void on_eliminar_caja_clicked(GtkButton *button, gpointer user_data) {
         cajas = g_list_remove(cajas, caja_encontrada);
         g_free(caja_encontrada);
 
-        // Mostrar un mensaje de éxito
+        // Mostrar un mensaje de Ã©xito
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Caja eliminada exitosamente.");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
 
-        // Cerrar la ventana después de eliminar
+        // Cerrar la ventana despuÃ©s de eliminar
         gtk_widget_destroy(GTK_WIDGET(data));
     }), window);
 
@@ -1267,7 +1267,7 @@ void on_eliminar_caja_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Mostrar Cajas"
+// FunciÃ³n para manejar el clic en el botÃ³n "Mostrar Cajas"
 void on_mostrar_cajas_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -1284,7 +1284,7 @@ void on_mostrar_cajas_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Crear un área de texto con scroll
+    // Crear un Ã¡rea de texto con scroll
     scroll = gtk_scrolled_window_new(NULL, NULL);
     gtk_widget_set_hexpand(scroll, TRUE);
     gtk_widget_set_vexpand(scroll, TRUE);
@@ -1308,7 +1308,7 @@ void on_mostrar_cajas_clicked(GtkButton *button, gpointer user_data) {
         for (l = cajas; l != NULL; l = l->next) {
             Caja *caja = (Caja *)l->data;
 
-            // Agregar la información de la caja al string
+            // Agregar la informaciÃ³n de la caja al string
             g_string_append_printf(text, 
                 "Numero de caja: %d\n"
                 "Responsable: %s\n"
@@ -1335,13 +1335,13 @@ void on_mostrar_cajas_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Ventas"
+// FunciÃ³n para manejar el clic en el botÃ³n "Ventas"
 void on_ventas_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
     GtkWidget *button_diarias, *button_semanales, *button_mensuales;
 
-    // Crear una nueva ventana para el módulo de ventas
+    // Crear una nueva ventana para el mÃ³dulo de ventas
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(window), "Modulo de Ventas");
     gtk_window_set_default_size(GTK_WINDOW(window), 300, 200);
@@ -1350,17 +1350,17 @@ void on_ventas_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Botón "Mostrar Ventas Diarias"
+    // BotÃ³n "Mostrar Ventas Diarias"
     button_diarias = gtk_button_new_with_label("Mostrar Ventas Diarias");
     g_signal_connect(button_diarias, "clicked", G_CALLBACK(on_mostrar_ventas_diarias_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_diarias, 0, 0, 1, 1);
 
-    // Botón "Mostrar Ventas Semanales"
+    // BotÃ³n "Mostrar Ventas Semanales"
     button_semanales = gtk_button_new_with_label("Mostrar Ventas Semanales");
     g_signal_connect(button_semanales, "clicked", G_CALLBACK(on_mostrar_ventas_semanales_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_semanales, 0, 1, 1, 1);
 
-    // Botón "Mostrar Ventas Mensuales"
+    // BotÃ³n "Mostrar Ventas Mensuales"
     button_mensuales = gtk_button_new_with_label("Mostrar Ventas Mensuales");
     g_signal_connect(button_mensuales, "clicked", G_CALLBACK(on_mostrar_ventas_mensuales_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_mensuales, 0, 2, 1, 1);
@@ -1369,13 +1369,13 @@ void on_ventas_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Productos"
+// FunciÃ³n para manejar el clic en el botÃ³n "Productos"
 void on_productos_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
     GtkWidget *button_crear, *button_modificar, *button_eliminar, *button_mostrar;
 
-    // Crear una nueva ventana para el módulo de productos
+    // Crear una nueva ventana para el mÃ³dulo de productos
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(window), "Modulo de Productos");
     gtk_window_set_default_size(GTK_WINDOW(window), 300, 200);
@@ -1384,22 +1384,22 @@ void on_productos_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Botón "Crear Producto"
+    // BotÃ³n "Crear Producto"
     button_crear = gtk_button_new_with_label("Crear Producto");
     g_signal_connect(button_crear, "clicked", G_CALLBACK(on_crear_producto_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_crear, 0, 0, 1, 1);
 
-    // Botón "Modificar Producto"
+    // BotÃ³n "Modificar Producto"
     button_modificar = gtk_button_new_with_label("Modificar Producto");
     g_signal_connect(button_modificar, "clicked", G_CALLBACK(on_modificar_producto_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_modificar, 0, 1, 1, 1);
 
-    // Botón "Eliminar Producto"
+    // BotÃ³n "Eliminar Producto"
     button_eliminar = gtk_button_new_with_label("Eliminar Producto");
     g_signal_connect(button_eliminar, "clicked", G_CALLBACK(on_eliminar_producto_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_eliminar, 0, 2, 1, 1);
 
-    // Botón "Mostrar Productos"
+    // BotÃ³n "Mostrar Productos"
     button_mostrar = gtk_button_new_with_label("Mostrar Productos");
     g_signal_connect(button_mostrar, "clicked", G_CALLBACK(on_mostrar_productos_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_mostrar, 0, 3, 1, 1);
@@ -1408,7 +1408,7 @@ void on_productos_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Crear Producto"
+// FunciÃ³n para manejar el clic en el botÃ³n "Crear Producto"
 void on_crear_producto_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -1425,7 +1425,7 @@ void on_crear_producto_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Campo de entrada para el código del producto
+    // Campo de entrada para el cÃ³digo del producto
     label = gtk_label_new("Codigo del Producto:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 0, 1, 1);
     entry_codigo = gtk_entry_new();
@@ -1455,7 +1455,7 @@ void on_crear_producto_clicked(GtkButton *button, gpointer user_data) {
     entry_precio_pesos = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_precio_pesos, 1, 4, 1, 1);
 
-    // Campo de entrada para el precio en Dólares
+    // Campo de entrada para el precio en DÃ³lares
     label = gtk_label_new("Precio en Dolares:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 5, 1, 1);
     entry_precio_dolares = gtk_entry_new();
@@ -1467,11 +1467,11 @@ void on_crear_producto_clicked(GtkButton *button, gpointer user_data) {
     entry_precio_euros = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_precio_euros, 1, 6, 1, 1);
 
-    // Botón para guardar el producto
+    // BotÃ³n para guardar el producto
     button_guardar = gtk_button_new_with_label("Guardar Producto");
     gtk_grid_attach(GTK_GRID(grid), button_guardar, 0, 7, 2, 1);
 
-    // Conectar la señal del botón "Guardar Producto"
+    // Conectar la seÃ±al del botÃ³n "Guardar Producto"
     g_signal_connect(button_guardar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_codigo = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_codigo"));
         GtkEntry *entry_nombre = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_nombre"));
@@ -1490,7 +1490,7 @@ void on_crear_producto_clicked(GtkButton *button, gpointer user_data) {
         const char *precio_dolares_str = gtk_entry_get_text(entry_precio_dolares);
         const char *precio_euros_str = gtk_entry_get_text(entry_precio_euros);
 
-        // Convertir los valores a números
+        // Convertir los valores a nÃºmeros
         int codigo = atoi(codigo_str);
         int cantidad = atoi(cantidad_str);
         float precio_bs = atof(precio_bs_str);
@@ -1511,12 +1511,12 @@ void on_crear_producto_clicked(GtkButton *button, gpointer user_data) {
         // Agregar el producto a la lista
         productos = g_list_append(productos, producto);
 
-        // Mostrar un mensaje de éxito
+        // Mostrar un mensaje de Ã©xito
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Producto creado exitosamente");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
 
-        // Cerrar la ventana después de guardar
+        // Cerrar la ventana despuÃ©s de guardar
         gtk_widget_destroy(GTK_WIDGET(data));
     }), window);
 
@@ -1533,7 +1533,7 @@ void on_crear_producto_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Mostrar Ventas Diarias"
+// FunciÃ³n para manejar el clic en el botÃ³n "Mostrar Ventas Diarias"
 void on_mostrar_ventas_diarias_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -1556,16 +1556,16 @@ void on_mostrar_ventas_diarias_clicked(GtkButton *button, gpointer user_data) {
     entry_fecha = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_fecha, 1, 0, 1, 1);
 
-    // Botón para buscar las ventas
+    // BotÃ³n para buscar las ventas
     button_buscar = gtk_button_new_with_label("Buscar Ventas");
     gtk_grid_attach(GTK_GRID(grid), button_buscar, 0, 1, 2, 1);
 
-    // Conectar la señal del botón "Buscar Ventas"
+    // Conectar la seÃ±al del botÃ³n "Buscar Ventas"
     g_signal_connect(button_buscar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_fecha = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_fecha"));
         const char *fecha = gtk_entry_get_text(entry_fecha);
 
-        // Verificar si la fecha es válida (puedes agregar más validaciones aquí)
+        // Verificar si la fecha es vÃ¡lida (puedes agregar mÃ¡s validaciones aquÃ­)
         if (strlen(fecha) == 0) {
             GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "Por favor, ingrese una fecha valida.");
             gtk_dialog_run(GTK_DIALOG(dialog));
@@ -1587,7 +1587,7 @@ void on_mostrar_ventas_diarias_clicked(GtkButton *button, gpointer user_data) {
         grid_ventas = gtk_grid_new();
         gtk_container_add(GTK_CONTAINER(window_ventas), grid_ventas);
 
-        // Crear un área de texto con scroll
+        // Crear un Ã¡rea de texto con scroll
         scroll = gtk_scrolled_window_new(NULL, NULL);
         gtk_widget_set_hexpand(scroll, TRUE);
         gtk_widget_set_vexpand(scroll, TRUE);
@@ -1611,7 +1611,7 @@ void on_mostrar_ventas_diarias_clicked(GtkButton *button, gpointer user_data) {
             if (strcmp(factura->fecha, fecha) == 0) {
                 ventas_encontradas++;
 
-                // Buscar el cliente por cédula
+                // Buscar el cliente por cÃ©dula
                 Cliente *cliente_encontrado = NULL;
                 GList *c;
                 for (c = clientes; c != NULL; c = c->next) {
@@ -1622,11 +1622,11 @@ void on_mostrar_ventas_diarias_clicked(GtkButton *button, gpointer user_data) {
                     }
                 }
 
-                // Obtener el nombre y apellido del cliente si se encontró
+                // Obtener el nombre y apellido del cliente si se encontrÃ³
                 const char *nombre_cliente = cliente_encontrado ? cliente_encontrado->nombre : "Desconocido";
                 const char *apellido_cliente = cliente_encontrado ? cliente_encontrado->apellido : "Desconocido";
 
-                // Agregar la información de la factura al string
+                // Agregar la informaciÃ³n de la factura al string
                 g_string_append_printf(text, 
                     "Factura N#: %d\n"
                     "Fecha: %s\n"
@@ -1669,7 +1669,7 @@ void on_mostrar_ventas_diarias_clicked(GtkButton *button, gpointer user_data) {
 
 
 ////////////////////////////////////////////////////////////////////////////////
-// Función para manejar el clic en el botón "Mostrar Ventas Semanales"
+// FunciÃ³n para manejar el clic en el botÃ³n "Mostrar Ventas Semanales"
 void on_mostrar_ventas_semanales_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -1698,11 +1698,11 @@ void on_mostrar_ventas_semanales_clicked(GtkButton *button, gpointer user_data) 
     entry_semana = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_semana, 1, 1, 1, 1);
 
-    // Botón para buscar las ventas
+    // BotÃ³n para buscar las ventas
     button_buscar = gtk_button_new_with_label("Buscar Ventas");
     gtk_grid_attach(GTK_GRID(grid), button_buscar, 0, 2, 2, 1);
 
-    // Conectar la señal del botón "Buscar Ventas"
+    // Conectar la seÃ±al del botÃ³n "Buscar Ventas"
     g_signal_connect(button_buscar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_mes = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_mes"));
         GtkEntry *entry_semana = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_semana"));
@@ -1710,7 +1710,7 @@ void on_mostrar_ventas_semanales_clicked(GtkButton *button, gpointer user_data) 
         const char *mes = gtk_entry_get_text(entry_mes);
         const char *semana_str = gtk_entry_get_text(entry_semana);
 
-        // Validar que los campos no estén vacíos
+        // Validar que los campos no estÃ©n vacÃ­os
         if (strlen(mes) == 0 || strlen(semana_str) == 0) {
             GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "Por favor, ingrese el mes y la semana.");
             gtk_dialog_run(GTK_DIALOG(dialog));
@@ -1718,10 +1718,10 @@ void on_mostrar_ventas_semanales_clicked(GtkButton *button, gpointer user_data) 
             return;
         }
 
-        // Convertir la semana a un número entero
+        // Convertir la semana a un nÃºmero entero
         int semana = atoi(semana_str);
 
-        // Validar que la semana esté en el rango 1-5
+        // Validar que la semana estÃ© en el rango 1-5
         if (semana < 1 || semana > 5) {
             GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "La semana debe estar entre 01 y 05.");
             gtk_dialog_run(GTK_DIALOG(dialog));
@@ -1743,7 +1743,7 @@ void on_mostrar_ventas_semanales_clicked(GtkButton *button, gpointer user_data) 
         grid_ventas = gtk_grid_new();
         gtk_container_add(GTK_CONTAINER(window_ventas), grid_ventas);
 
-        // Crear un área de texto con scroll
+        // Crear un Ã¡rea de texto con scroll
         scroll = gtk_scrolled_window_new(NULL, NULL);
         gtk_widget_set_hexpand(scroll, TRUE);
         gtk_widget_set_vexpand(scroll, TRUE);
@@ -1765,20 +1765,20 @@ void on_mostrar_ventas_semanales_clicked(GtkButton *button, gpointer user_data) 
 
             // Extraer el mes de la fecha de la factura (formato dd/mm/aaaa)
             char factura_mes[3];
-            strncpy(factura_mes, factura->fecha + 3, 2); // Extraer los dos dígitos del mes
+            strncpy(factura_mes, factura->fecha + 3, 2); // Extraer los dos dÃ­gitos del mes
             factura_mes[2] = '\0';
 
             // Comparar el mes de la factura con el mes ingresado
             if (strcmp(factura_mes, mes) == 0) {
                 // Calcular la semana del mes para la fecha de la factura
-                int dia = atoi(factura->fecha); // Extraer el día de la fecha
+                int dia = atoi(factura->fecha); // Extraer el dÃ­a de la fecha
                 int semana_factura = (dia - 1) / 7 + 1; // Calcular la semana (1-5)
 
                 // Comparar la semana de la factura con la semana ingresada
                 if (semana_factura == semana) {
                     ventas_encontradas++;
 
-                    // Buscar el cliente por cédula
+                    // Buscar el cliente por cÃ©dula
                     Cliente *cliente_encontrado = NULL;
                     GList *c;
                     for (c = clientes; c != NULL; c = c->next) {
@@ -1789,11 +1789,11 @@ void on_mostrar_ventas_semanales_clicked(GtkButton *button, gpointer user_data) 
                         }
                     }
 
-                    // Obtener el nombre y apellido del cliente si se encontró
+                    // Obtener el nombre y apellido del cliente si se encontrÃ³
                     const char *nombre_cliente = cliente_encontrado ? cliente_encontrado->nombre : "Desconocido";
                     const char *apellido_cliente = cliente_encontrado ? cliente_encontrado->apellido : "Desconocido";
 
-                    // Agregar la información de la factura al string
+                    // Agregar la informaciÃ³n de la factura al string
                     g_string_append_printf(text, 
                         "Factura N#: %d\n"
                         "Fecha: %s\n"
@@ -1836,7 +1836,7 @@ void on_mostrar_ventas_semanales_clicked(GtkButton *button, gpointer user_data) 
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Mostrar Ventas Mensuales"
+// FunciÃ³n para manejar el clic en el botÃ³n "Mostrar Ventas Mensuales"
 void on_mostrar_ventas_mensuales_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -1859,18 +1859,18 @@ void on_mostrar_ventas_mensuales_clicked(GtkButton *button, gpointer user_data) 
     entry_mes = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_mes, 1, 0, 1, 1);
 
-    // Botón para buscar las ventas
+    // BotÃ³n para buscar las ventas
     button_buscar = gtk_button_new_with_label("Buscar Ventas");
     gtk_grid_attach(GTK_GRID(grid), button_buscar, 0, 1, 2, 1);
 
-    // Conectar la señal del botón "Buscar Ventas"
+    // Conectar la seÃ±al del botÃ³n "Buscar Ventas"
     g_signal_connect(button_buscar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_mes = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_mes"));
         const char *mes = gtk_entry_get_text(entry_mes);
 
-        // Validar que el campo no esté vacío
+        // Validar que el campo no estÃ© vacÃ­o
         if (strlen(mes) == 0) {
-            GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "Por favor, ingrese un mes válido.");
+            GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "Por favor, ingrese un mes vÃ¡lido.");
             gtk_dialog_run(GTK_DIALOG(dialog));
             gtk_widget_destroy(dialog);
             return;
@@ -1890,7 +1890,7 @@ void on_mostrar_ventas_mensuales_clicked(GtkButton *button, gpointer user_data) 
         grid_ventas = gtk_grid_new();
         gtk_container_add(GTK_CONTAINER(window_ventas), grid_ventas);
 
-        // Crear un área de texto con scroll
+        // Crear un Ã¡rea de texto con scroll
         scroll = gtk_scrolled_window_new(NULL, NULL);
         gtk_widget_set_hexpand(scroll, TRUE);
         gtk_widget_set_vexpand(scroll, TRUE);
@@ -1912,14 +1912,14 @@ void on_mostrar_ventas_mensuales_clicked(GtkButton *button, gpointer user_data) 
 
             // Extraer el mes de la fecha de la factura (formato dd/mm/aaaa)
             char factura_mes[3];
-            strncpy(factura_mes, factura->fecha + 3, 2); // Extraer los dos dígitos del mes
+            strncpy(factura_mes, factura->fecha + 3, 2); // Extraer los dos dÃ­gitos del mes
             factura_mes[2] = '\0';
 
             // Comparar el mes de la factura con el mes ingresado
             if (strcmp(factura_mes, mes) == 0) {
                 ventas_encontradas++;
 
-                // Buscar el cliente por cédula
+                // Buscar el cliente por cÃ©dula
                 Cliente *cliente_encontrado = NULL;
                 GList *c;
                 for (c = clientes; c != NULL; c = c->next) {
@@ -1930,11 +1930,11 @@ void on_mostrar_ventas_mensuales_clicked(GtkButton *button, gpointer user_data) 
                     }
                 }
 
-                // Obtener el nombre y apellido del cliente si se encontró
+                // Obtener el nombre y apellido del cliente si se encontrÃ³
                 const char *nombre_cliente = cliente_encontrado ? cliente_encontrado->nombre : "Desconocido";
                 const char *apellido_cliente = cliente_encontrado ? cliente_encontrado->apellido : "Desconocido";
 
-                // Agregar la información de la factura al string
+                // Agregar la informaciÃ³n de la factura al string
                 g_string_append_printf(text, 
                     "Factura N#: %d\n"
                     "Fecha: %s\n"
@@ -1975,7 +1975,7 @@ void on_mostrar_ventas_mensuales_clicked(GtkButton *button, gpointer user_data) 
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Modificar Producto"
+// FunciÃ³n para manejar el clic en el botÃ³n "Modificar Producto"
 void on_modificar_producto_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -1992,17 +1992,17 @@ void on_modificar_producto_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Campo de entrada para el código del producto
+    // Campo de entrada para el cÃ³digo del producto
     label = gtk_label_new("Codigo del Producto:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 0, 1, 1);
     entry_codigo = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_codigo, 1, 0, 1, 1);
 
-    // Botón para buscar el producto
+    // BotÃ³n para buscar el producto
     button_buscar = gtk_button_new_with_label("Buscar Producto");
     gtk_grid_attach(GTK_GRID(grid), button_buscar, 0, 1, 2, 1);
 
-    // Conectar la señal del botón "Buscar Producto"
+    // Conectar la seÃ±al del botÃ³n "Buscar Producto"
     g_signal_connect(button_buscar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_codigo = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_codigo"));
         const char *codigo_str = gtk_entry_get_text(entry_codigo);
@@ -2067,7 +2067,7 @@ void on_modificar_producto_clicked(GtkButton *button, gpointer user_data) {
     entry_precio_pesos = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_precio_pesos, 1, 5, 1, 1);
 
-    // Campo de entrada para el precio en Dólares
+    // Campo de entrada para el precio en DÃ³lares
     label = gtk_label_new("Precio en Dolares:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 6, 1, 1);
     entry_precio_dolares = gtk_entry_new();
@@ -2079,11 +2079,11 @@ void on_modificar_producto_clicked(GtkButton *button, gpointer user_data) {
     entry_precio_euros = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_precio_euros, 1, 7, 1, 1);
 
-    // Botón para guardar los cambios
+    // BotÃ³n para guardar los cambios
     button_guardar = gtk_button_new_with_label("Guardar Cambios");
     gtk_grid_attach(GTK_GRID(grid), button_guardar, 0, 8, 2, 1);
 
-    // Conectar la señal del botón "Guardar Cambios"
+    // Conectar la seÃ±al del botÃ³n "Guardar Cambios"
     g_signal_connect(button_guardar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_codigo = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_codigo"));
         GtkEntry *entry_nombre = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_nombre"));
@@ -2102,7 +2102,7 @@ void on_modificar_producto_clicked(GtkButton *button, gpointer user_data) {
         const char *precio_dolares_str = gtk_entry_get_text(entry_precio_dolares);
         const char *precio_euros_str = gtk_entry_get_text(entry_precio_euros);
 
-        // Convertir los valores a números
+        // Convertir los valores a nÃºmeros
         int codigo = atoi(codigo_str);
         int cantidad = atoi(cantidad_str);
         float precio_bs = atof(precio_bs_str);
@@ -2137,12 +2137,12 @@ void on_modificar_producto_clicked(GtkButton *button, gpointer user_data) {
         producto_encontrado->precio_dolares = precio_dolares;
         producto_encontrado->precio_euros = precio_euros;
 
-        // Mostrar un mensaje de éxito
+        // Mostrar un mensaje de Ã©xito
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Producto modificado exitosamente");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
 
-        // Cerrar la ventana después de guardar
+        // Cerrar la ventana despuÃ©s de guardar
         gtk_widget_destroy(GTK_WIDGET(data));
     }), window);
 
@@ -2159,7 +2159,7 @@ void on_modificar_producto_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Eliminar Producto"
+// FunciÃ³n para manejar el clic en el botÃ³n "Eliminar Producto"
 void on_eliminar_producto_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -2176,17 +2176,17 @@ void on_eliminar_producto_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Campo de entrada para el código del producto
+    // Campo de entrada para el cÃ³digo del producto
     label = gtk_label_new("Codigo del Producto:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 0, 1, 1);
     entry_codigo = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_codigo, 1, 0, 1, 1);
 
-    // Botón para eliminar el producto
+    // BotÃ³n para eliminar el producto
     button_eliminar = gtk_button_new_with_label("Eliminar Producto");
     gtk_grid_attach(GTK_GRID(grid), button_eliminar, 0, 1, 2, 1);
 
-    // Conectar la señal del botón "Eliminar Producto"
+    // Conectar la seÃ±al del botÃ³n "Eliminar Producto"
     g_signal_connect(button_eliminar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_codigo = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_codigo"));
         const char *codigo_str = gtk_entry_get_text(entry_codigo);
@@ -2215,12 +2215,12 @@ void on_eliminar_producto_clicked(GtkButton *button, gpointer user_data) {
         productos = g_list_remove(productos, producto_encontrado);
         g_free(producto_encontrado);
 
-        // Mostrar un mensaje de éxito
+        // Mostrar un mensaje de Ã©xito
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Producto eliminado exitosamente");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
 
-        // Cerrar la ventana después de eliminar
+        // Cerrar la ventana despuÃ©s de eliminar
         gtk_widget_destroy(GTK_WIDGET(data));
     }), window);
 
@@ -2231,7 +2231,7 @@ void on_eliminar_producto_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Mostrar Productos"
+// FunciÃ³n para manejar el clic en el botÃ³n "Mostrar Productos"
 void on_mostrar_productos_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -2248,7 +2248,7 @@ void on_mostrar_productos_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
     
-    // Crear un área de texto con scroll
+    // Crear un Ã¡rea de texto con scroll
     scroll = gtk_scrolled_window_new(NULL, NULL);
     gtk_widget_set_hexpand(scroll, TRUE);
     gtk_widget_set_vexpand(scroll, TRUE);
@@ -2260,7 +2260,7 @@ void on_mostrar_productos_clicked(GtkButton *button, gpointer user_data) {
 
     buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(view));
 
-    // Mostrar los productos en el área de texto
+    // Mostrar los productos en el Ã¡rea de texto
     GList *l;
     for (l = productos; l != NULL; l = l->next) {
         Producto *producto = (Producto *)l->data;
@@ -2293,13 +2293,13 @@ void on_mostrar_productos_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Clientes"
+// FunciÃ³n para manejar el clic en el botÃ³n "Clientes"
 void on_clientes_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
     GtkWidget *button_crear, *button_modificar, *button_eliminar, *button_mostrar;
 
-    // Crear una nueva ventana para el módulo de clientes
+    // Crear una nueva ventana para el mÃ³dulo de clientes
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(window), "Modulo de Clientes");
     gtk_window_set_default_size(GTK_WINDOW(window), 300, 200);
@@ -2308,22 +2308,22 @@ void on_clientes_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Botón "Crear Cliente"
+    // BotÃ³n "Crear Cliente"
     button_crear = gtk_button_new_with_label("Crear Cliente");
     g_signal_connect(button_crear, "clicked", G_CALLBACK(on_crear_cliente_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_crear, 0, 0, 1, 1);
 
-    // Botón "Modificar Cliente"
+    // BotÃ³n "Modificar Cliente"
     button_modificar = gtk_button_new_with_label("Modificar Cliente");
     g_signal_connect(button_modificar, "clicked", G_CALLBACK(on_modificar_cliente_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_modificar, 0, 1, 1, 1);
 
-    // Botón "Eliminar Cliente"
+    // BotÃ³n "Eliminar Cliente"
     button_eliminar = gtk_button_new_with_label("Eliminar Cliente");
     g_signal_connect(button_eliminar, "clicked", G_CALLBACK(on_eliminar_cliente_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_eliminar, 0, 2, 1, 1);
 
-    // Botón "Mostrar Clientes"
+    // BotÃ³n "Mostrar Clientes"
     button_mostrar = gtk_button_new_with_label("Mostrar Clientes");
     g_signal_connect(button_mostrar, "clicked", G_CALLBACK(on_mostrar_clientes_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_mostrar, 0, 3, 1, 1);
@@ -2332,7 +2332,7 @@ void on_clientes_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Crear Cliente"
+// FunciÃ³n para manejar el clic en el botÃ³n "Crear Cliente"
 void on_crear_cliente_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -2361,29 +2361,29 @@ void on_crear_cliente_clicked(GtkButton *button, gpointer user_data) {
     entry_apellido = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_apellido, 1, 1, 1, 1);
 
-    // Campo de entrada para la cédula del cliente
+    // Campo de entrada para la cÃ©dula del cliente
     label = gtk_label_new("Cedula del Cliente:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 2, 1, 1);
     entry_cedula = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_cedula, 1, 2, 1, 1);
 
-    // Campo de entrada para el teléfono del cliente
+    // Campo de entrada para el telÃ©fono del cliente
     label = gtk_label_new("Telefono del Cliente:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 3, 1, 1);
     entry_telefono = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_telefono, 1, 3, 1, 1);
 
-    // Campo de entrada para la dirección del cliente
+    // Campo de entrada para la direcciÃ³n del cliente
     label = gtk_label_new("Direccion del Cliente:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 4, 1, 1);
     entry_direccion = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_direccion, 1, 4, 1, 1);
 
-    // Botón para guardar el cliente
+    // BotÃ³n para guardar el cliente
     button_guardar = gtk_button_new_with_label("Guardar Cliente");
     gtk_grid_attach(GTK_GRID(grid), button_guardar, 0, 5, 2, 1);
 
-    // Conectar la señal del botón "Guardar Cliente"
+    // Conectar la seÃ±al del botÃ³n "Guardar Cliente"
     g_signal_connect(button_guardar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_nombre = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_nombre"));
         GtkEntry *entry_apellido = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_apellido"));
@@ -2409,12 +2409,12 @@ void on_crear_cliente_clicked(GtkButton *button, gpointer user_data) {
         // Agregar el cliente a la lista
         clientes = g_list_append(clientes, cliente);
 
-        // Mostrar un mensaje de éxito
+        // Mostrar un mensaje de Ã©xito
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Cliente creado exitosamente");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
 
-        // Cerrar la ventana después de guardar
+        // Cerrar la ventana despuÃ©s de guardar
         gtk_widget_destroy(GTK_WIDGET(data));
     }), window);
 
@@ -2429,7 +2429,7 @@ void on_crear_cliente_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Modificar Cliente"
+// FunciÃ³n para manejar el clic en el botÃ³n "Modificar Cliente"
 void on_modificar_cliente_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -2446,17 +2446,17 @@ void on_modificar_cliente_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Campo de entrada para la cédula del cliente
+    // Campo de entrada para la cÃ©dula del cliente
     label = gtk_label_new("Cedula del Cliente:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 0, 1, 1);
     entry_cedula = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_cedula, 1, 0, 1, 1);
 
-    // Botón para buscar el cliente
+    // BotÃ³n para buscar el cliente
     button_buscar = gtk_button_new_with_label("Buscar Cliente");
     gtk_grid_attach(GTK_GRID(grid), button_buscar, 0, 1, 2, 1);
 
-    // Conectar la señal del botón "Buscar Cliente"
+    // Conectar la seÃ±al del botÃ³n "Buscar Cliente"
     g_signal_connect(button_buscar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_cedula = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_cedula"));
         const char *cedula = gtk_entry_get_text(entry_cedula);
@@ -2504,23 +2504,23 @@ void on_modificar_cliente_clicked(GtkButton *button, gpointer user_data) {
     entry_apellido = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_apellido, 1, 3, 1, 1);
 
-    // Campo de entrada para el teléfono del cliente
+    // Campo de entrada para el telÃ©fono del cliente
     label = gtk_label_new("Telefono del Cliente:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 4, 1, 1);
     entry_telefono = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_telefono, 1, 4, 1, 1);
 
-    // Campo de entrada para la dirección del cliente
+    // Campo de entrada para la direcciÃ³n del cliente
     label = gtk_label_new("Direccion del Cliente:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 5, 1, 1);
     entry_direccion = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_direccion, 1, 5, 1, 1);
 
-    // Botón para guardar los cambios
+    // BotÃ³n para guardar los cambios
     button_guardar = gtk_button_new_with_label("Guardar Cambios");
     gtk_grid_attach(GTK_GRID(grid), button_guardar, 0, 6, 2, 1);
 
-    // Conectar la señal del botón "Guardar Cambios"
+    // Conectar la seÃ±al del botÃ³n "Guardar Cambios"
     g_signal_connect(button_guardar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_cedula = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_cedula"));
         GtkEntry *entry_nombre = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_nombre"));
@@ -2560,12 +2560,12 @@ void on_modificar_cliente_clicked(GtkButton *button, gpointer user_data) {
         strncpy(cliente_encontrado->telefono, telefono, sizeof(cliente_encontrado->telefono));
         strncpy(cliente_encontrado->direccion, direccion, sizeof(cliente_encontrado->direccion));
 
-        // Mostrar un mensaje de éxito
+        // Mostrar un mensaje de Ã©xito
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Cliente modificado exitosamente");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
 
-        // Cerrar la ventana después de guardar
+        // Cerrar la ventana despuÃ©s de guardar
         gtk_widget_destroy(GTK_WIDGET(data));
     }), window);
 
@@ -2580,7 +2580,7 @@ void on_modificar_cliente_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Eliminar Cliente"
+// FunciÃ³n para manejar el clic en el botÃ³n "Eliminar Cliente"
 void on_eliminar_cliente_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -2597,17 +2597,17 @@ void on_eliminar_cliente_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Campo de entrada para la cédula del cliente
+    // Campo de entrada para la cÃ©dula del cliente
     label = gtk_label_new("Cedula del Cliente:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 0, 1, 1);
     entry_cedula = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_cedula, 1, 0, 1, 1);
 
-    // Botón para eliminar el cliente
+    // BotÃ³n para eliminar el cliente
     button_eliminar = gtk_button_new_with_label("Eliminar Cliente");
     gtk_grid_attach(GTK_GRID(grid), button_eliminar, 0, 1, 2, 1);
 
-    // Conectar la señal del botón "Eliminar Cliente"
+    // Conectar la seÃ±al del botÃ³n "Eliminar Cliente"
     g_signal_connect(button_eliminar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_cedula = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_cedula"));
         const char *cedula = gtk_entry_get_text(entry_cedula);
@@ -2635,12 +2635,12 @@ void on_eliminar_cliente_clicked(GtkButton *button, gpointer user_data) {
         clientes = g_list_remove(clientes, cliente_encontrado);
         g_free(cliente_encontrado);
 
-        // Mostrar un mensaje de éxito
+        // Mostrar un mensaje de Ã©xito
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Cliente eliminado exitosamente");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
 
-        // Cerrar la ventana después de eliminar
+        // Cerrar la ventana despuÃ©s de eliminar
         gtk_widget_destroy(GTK_WIDGET(data));
     }), window);
 
@@ -2651,7 +2651,7 @@ void on_eliminar_cliente_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Mostrar Clientes"
+// FunciÃ³n para manejar el clic en el botÃ³n "Mostrar Clientes"
 void on_mostrar_clientes_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -2668,7 +2668,7 @@ void on_mostrar_clientes_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Crear un área de texto con scroll
+    // Crear un Ã¡rea de texto con scroll
     scroll = gtk_scrolled_window_new(NULL, NULL);
     gtk_widget_set_hexpand(scroll, TRUE);
     gtk_widget_set_vexpand(scroll, TRUE);
@@ -2680,7 +2680,7 @@ void on_mostrar_clientes_clicked(GtkButton *button, gpointer user_data) {
 
     buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(view));
 
-    // Mostrar los clientes en el área de texto
+    // Mostrar los clientes en el Ã¡rea de texto
     GList *l;
     for (l = clientes; l != NULL; l = l->next) {
         Cliente *cliente = (Cliente *)l->data;
@@ -2709,13 +2709,13 @@ void on_mostrar_clientes_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Facturas"
+// FunciÃ³n para manejar el clic en el botÃ³n "Facturas"
 void on_facturas_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
     GtkWidget *button_crear, *button_modificar, *button_eliminar, *button_mostrar;
 
-    // Crear una nueva ventana para el módulo de facturas
+    // Crear una nueva ventana para el mÃ³dulo de facturas
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(window), "Modulo de Facturas");
     gtk_window_set_default_size(GTK_WINDOW(window), 300, 200);
@@ -2724,22 +2724,22 @@ void on_facturas_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Botón "Crear Factura"
+    // BotÃ³n "Crear Factura"
     button_crear = gtk_button_new_with_label("Crear Factura");
     g_signal_connect(button_crear, "clicked", G_CALLBACK(on_crear_factura_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_crear, 0, 0, 1, 1);
 
-    // Botón "Modificar Factura"
+    // BotÃ³n "Modificar Factura"
     button_modificar = gtk_button_new_with_label("Modificar Factura");
     g_signal_connect(button_modificar, "clicked", G_CALLBACK(on_modificar_factura_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_modificar, 0, 1, 1, 1);
 
-    // Botón "Eliminar Factura"
+    // BotÃ³n "Eliminar Factura"
     button_eliminar = gtk_button_new_with_label("Eliminar Factura");
     g_signal_connect(button_eliminar, "clicked", G_CALLBACK(on_eliminar_factura_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_eliminar, 0, 2, 1, 1);
 
-    // Botón "Mostrar Facturas"
+    // BotÃ³n "Mostrar Facturas"
     button_mostrar = gtk_button_new_with_label("Mostrar Facturas");
     g_signal_connect(button_mostrar, "clicked", G_CALLBACK(on_mostrar_facturas_clicked), NULL);
     gtk_grid_attach(GTK_GRID(grid), button_mostrar, 0, 3, 1, 1);
@@ -2748,7 +2748,7 @@ void on_facturas_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Crear Factura"
+// FunciÃ³n para manejar el clic en el botÃ³n "Crear Factura"
 void on_crear_factura_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -2771,7 +2771,7 @@ void on_crear_factura_clicked(GtkButton *button, gpointer user_data) {
     entry_fecha = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_fecha, 1, 0, 1, 1);
 
-    // Campo de entrada para la cédula del cliente
+    // Campo de entrada para la cÃ©dula del cliente
     label = gtk_label_new("Cedula del Cliente:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 1, 1, 1);
     entry_cedula = gtk_entry_new();
@@ -2783,11 +2783,11 @@ void on_crear_factura_clicked(GtkButton *button, gpointer user_data) {
     entry_cantidad_productos = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_cantidad_productos, 1, 2, 1, 1);
 
-    // Botón para guardar la factura
+    // BotÃ³n para guardar la factura
     button_guardar = gtk_button_new_with_label("Guardar Factura");
     gtk_grid_attach(GTK_GRID(grid), button_guardar, 0, 3, 2, 1);
 
-    // Conectar la señal del botón "Guardar Factura"
+    // Conectar la seÃ±al del botÃ³n "Guardar Factura"
     g_signal_connect(button_guardar, "clicked", G_CALLBACK(on_crear_factura_guardar), window);
 
     // Asignar los campos de entrada como datos de la ventana
@@ -2799,7 +2799,7 @@ void on_crear_factura_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Guardar Factura"
+// FunciÃ³n para manejar el clic en el botÃ³n "Guardar Factura"
 void on_crear_factura_guardar(GtkButton *button, gpointer user_data) {
     GtkWidget *window = GTK_WIDGET(user_data);
     GtkEntry *entry_fecha = GTK_ENTRY(g_object_get_data(G_OBJECT(window), "entry_fecha"));
@@ -2849,7 +2849,7 @@ void on_crear_factura_guardar(GtkButton *button, gpointer user_data) {
         GtkWidget *grid = gtk_grid_new();
         gtk_container_add(GTK_CONTAINER(content_area), grid);
 
-        // Campo de entrada para el código del producto
+        // Campo de entrada para el cÃ³digo del producto
         GtkWidget *label_codigo = gtk_label_new("Codigo del Producto:");
         gtk_grid_attach(GTK_GRID(grid), label_codigo, 0, 0, 1, 1);
         GtkWidget *entry_codigo = gtk_entry_new();
@@ -2861,7 +2861,7 @@ void on_crear_factura_guardar(GtkButton *button, gpointer user_data) {
         GtkWidget *entry_cantidad = gtk_entry_new();
         gtk_grid_attach(GTK_GRID(grid), entry_cantidad, 1, 1, 1, 1);
 
-        // Mostrar el diálogo
+        // Mostrar el diÃ¡logo
         gtk_widget_show_all(dialog);
         gint response = gtk_dialog_run(GTK_DIALOG(dialog));
 
@@ -2888,17 +2888,17 @@ void on_crear_factura_guardar(GtkButton *button, gpointer user_data) {
                 GtkWidget *dialog_error = gtk_message_dialog_new(GTK_WINDOW(dialog), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "Producto no encontrado");
                 gtk_dialog_run(GTK_DIALOG(dialog_error));
                 gtk_widget_destroy(dialog_error);
-                i--; // Repetir la iteración para este producto
+                i--; // Repetir la iteraciÃ³n para este producto
                 continue;
             }
 
-            // Crear un ítem de factura
+            // Crear un Ã­tem de factura
             ItemFactura *item = g_new(ItemFactura, 1);
             item->codigo_producto = codigo;
             item->cantidad = cantidad;
             item->precio_unitario = producto_encontrado->precio_bs; // Usar el precio en Bs
 
-            // Agregar el ítem a la factura
+            // Agregar el Ã­tem a la factura
             factura->items = g_list_append(factura->items, item);
 
             // Actualizar el subtotal de la factura
@@ -2925,11 +2925,11 @@ void on_crear_factura_guardar(GtkButton *button, gpointer user_data) {
     printf("IVA: %.2f\n", factura->iva);
     printf("Total: %.2f\n", factura->total);
 
-    // Cerrar la ventana después de guardar
+    // Cerrar la ventana despuÃ©s de guardar
     gtk_widget_destroy(window);
 }
 
-// Función para manejar el clic en el botón "Modificar Factura"
+// FunciÃ³n para manejar el clic en el botÃ³n "Modificar Factura"
 void on_modificar_factura_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -2952,17 +2952,17 @@ void on_modificar_factura_clicked(GtkButton *button, gpointer user_data) {
     entry_fecha = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_fecha, 1, 0, 1, 1);
 
-    // Campo de entrada para la cédula del cliente
+    // Campo de entrada para la cÃ©dula del cliente
     label = gtk_label_new("Cedula del Cliente:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 1, 1, 1);
     entry_cedula = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_cedula, 1, 1, 1, 1);
 
-    // Botón para buscar la factura
+    // BotÃ³n para buscar la factura
     button_buscar = gtk_button_new_with_label("Buscar Factura");
     gtk_grid_attach(GTK_GRID(grid), button_buscar, 0, 2, 2, 1);
 
-    // Conectar la señal del botón "Buscar Factura"
+    // Conectar la seÃ±al del botÃ³n "Buscar Factura"
     g_signal_connect(button_buscar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_fecha = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_fecha"));
         GtkEntry *entry_cedula = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_cedula"));
@@ -2996,14 +2996,14 @@ void on_modificar_factura_clicked(GtkButton *button, gpointer user_data) {
     // Campo de entrada para la cantidad de productos
     label = gtk_label_new("Cantidad de Productos:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 2, 1, 1);
-    entry_cantidad_productos = gtk_entry_new();  // Asegurar la declaración aquí
+    entry_cantidad_productos = gtk_entry_new();  // Asegurar la declaraciÃ³n aquÃ­
     gtk_grid_attach(GTK_GRID(grid), entry_cantidad_productos, 1, 2, 1, 1);
 
-    // Botón para guardar los cambios
+    // BotÃ³n para guardar los cambios
     button_guardar = gtk_button_new_with_label("Guardar Cambios");
     gtk_grid_attach(GTK_GRID(grid), button_guardar, 0, 4, 2, 1);
 
-    // Conectar la señal del botón "Guardar Cambios"
+    // Conectar la seÃ±al del botÃ³n "Guardar Cambios"
     g_signal_connect(button_guardar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_fecha = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_fecha"));
         GtkEntry *entry_cedula = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_cedula"));
@@ -3049,7 +3049,7 @@ void on_modificar_factura_clicked(GtkButton *button, gpointer user_data) {
             GtkWidget *grid = gtk_grid_new();
             gtk_container_add(GTK_CONTAINER(content_area), grid);
 
-            // Campo de entrada para el código del producto
+            // Campo de entrada para el cÃ³digo del producto
             GtkWidget *label_codigo = gtk_label_new("Codigo del Producto:");
             gtk_grid_attach(GTK_GRID(grid), label_codigo, 0, 0, 1, 1);
             GtkWidget *entry_codigo = gtk_entry_new();
@@ -3061,7 +3061,7 @@ void on_modificar_factura_clicked(GtkButton *button, gpointer user_data) {
             GtkWidget *entry_cantidad = gtk_entry_new();
             gtk_grid_attach(GTK_GRID(grid), entry_cantidad, 1, 1, 1, 1);
 
-            // Mostrar el diálogo
+            // Mostrar el diÃ¡logo
             gtk_widget_show_all(dialog);
             gint response = gtk_dialog_run(GTK_DIALOG(dialog));
 
@@ -3088,17 +3088,17 @@ void on_modificar_factura_clicked(GtkButton *button, gpointer user_data) {
                     GtkWidget *dialog_error = gtk_message_dialog_new(GTK_WINDOW(dialog), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "Producto no encontrado");
                     gtk_dialog_run(GTK_DIALOG(dialog_error));
                     gtk_widget_destroy(dialog_error);
-                    i--; // Repetir la iteración para este producto
+                    i--; // Repetir la iteraciÃ³n para este producto
                     continue;
                 }
 
-                // Crear un ítem de factura
+                // Crear un Ã­tem de factura
                 ItemFactura *item = g_new(ItemFactura, 1);
                 item->codigo_producto = codigo;
                 item->cantidad = cantidad;
                 item->precio_unitario = producto_encontrado->precio_bs; // Usar el precio en Bs
 
-                // Agregar el ítem a la factura
+                // Agregar el Ã­tem a la factura
                 factura_encontrada->items = g_list_append(factura_encontrada->items, item);
 
                 // Actualizar el subtotal de la factura
@@ -3114,12 +3114,12 @@ void on_modificar_factura_clicked(GtkButton *button, gpointer user_data) {
         // Calcular el total
         factura_encontrada->total = factura_encontrada->subtotal + factura_encontrada->iva;
 
-        // Mostrar un mensaje de éxito
+        // Mostrar un mensaje de Ã©xito
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Factura modificada exitosamente");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
 
-        // Cerrar la ventana después de guardar
+        // Cerrar la ventana despuÃ©s de guardar
         gtk_widget_destroy(GTK_WIDGET(data));
     }), window);
 
@@ -3132,7 +3132,7 @@ void on_modificar_factura_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Eliminar Factura"
+// FunciÃ³n para manejar el clic en el botÃ³n "Eliminar Factura"
 void on_eliminar_factura_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -3155,17 +3155,17 @@ void on_eliminar_factura_clicked(GtkButton *button, gpointer user_data) {
     entry_fecha = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_fecha, 1, 0, 1, 1);
 
-    // Campo de entrada para la cédula del cliente
+    // Campo de entrada para la cÃ©dula del cliente
     label = gtk_label_new("Cedula del Cliente:");
     gtk_grid_attach(GTK_GRID(grid), label, 0, 1, 1, 1);
     entry_cedula = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(grid), entry_cedula, 1, 1, 1, 1);
 
-    // Botón para eliminar la factura
+    // BotÃ³n para eliminar la factura
     button_eliminar = gtk_button_new_with_label("Eliminar Factura");
     gtk_grid_attach(GTK_GRID(grid), button_eliminar, 0, 2, 2, 1);
 
-    // Conectar la señal del botón "Eliminar Factura"
+    // Conectar la seÃ±al del botÃ³n "Eliminar Factura"
     g_signal_connect(button_eliminar, "clicked", G_CALLBACK(+[](GtkButton *button, gpointer data) {
         GtkEntry *entry_fecha = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_fecha"));
         GtkEntry *entry_cedula = GTK_ENTRY(g_object_get_data(G_OBJECT(data), "entry_cedula"));
@@ -3195,12 +3195,12 @@ void on_eliminar_factura_clicked(GtkButton *button, gpointer user_data) {
         facturas = g_list_remove(facturas, factura_encontrada);
         g_free(factura_encontrada);
 
-        // Mostrar un mensaje de éxito
+        // Mostrar un mensaje de Ã©xito
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Factura eliminada exitosamente");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
 
-        // Cerrar la ventana después de eliminar
+        // Cerrar la ventana despuÃ©s de eliminar
         gtk_widget_destroy(GTK_WIDGET(data));
     }), window);
 
@@ -3212,7 +3212,7 @@ void on_eliminar_factura_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
 }
 
-// Función para manejar el clic en el botón "Mostrar Facturas"
+// FunciÃ³n para manejar el clic en el botÃ³n "Mostrar Facturas"
 void on_mostrar_facturas_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window;
     GtkWidget *grid;
@@ -3229,7 +3229,7 @@ void on_mostrar_facturas_clicked(GtkButton *button, gpointer user_data) {
     grid = gtk_grid_new();
     gtk_container_add(GTK_CONTAINER(window), grid);
 
-    // Crear un área de texto con scroll
+    // Crear un Ã¡rea de texto con scroll
     scroll = gtk_scrolled_window_new(NULL, NULL);
     gtk_widget_set_hexpand(scroll, TRUE);
     gtk_widget_set_vexpand(scroll, TRUE);
@@ -3248,13 +3248,13 @@ void on_mostrar_facturas_clicked(GtkButton *button, gpointer user_data) {
         // Crear un string para almacenar las facturas
         GString *text = g_string_new(NULL);
 
-        // Recorrer la lista de facturas con un índice para numerarlas
+        // Recorrer la lista de facturas con un Ã­ndice para numerarlas
         int numero_factura = 1;
         GList *l;
         for (l = facturas; l != NULL; l = l->next, numero_factura++) {
             Factura *factura = (Factura *)l->data;
 
-            // Buscar el cliente por cédula
+            // Buscar el cliente por cÃ©dula
             Cliente *cliente_encontrado = NULL;
             GList *c;
             for (c = clientes; c != NULL; c = c->next) {
@@ -3265,11 +3265,11 @@ void on_mostrar_facturas_clicked(GtkButton *button, gpointer user_data) {
                 }
             }
 
-            // Obtener el nombre y apellido del cliente si se encontró
+            // Obtener el nombre y apellido del cliente si se encontrÃ³
             const char *nombre_cliente = cliente_encontrado ? cliente_encontrado->nombre : "Desconocido";
             const char *apellido_cliente = cliente_encontrado ? cliente_encontrado->apellido : "Desconocido";
 
-            // Agregar la información de la factura al string
+            // Agregar la informaciÃ³n de la factura al string
             g_string_append_printf(text, 
                 "Factura N#: %d\n"
                 "Fecha: %s\n"
